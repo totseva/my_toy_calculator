@@ -1,3 +1,16 @@
+//SOUNDS
+const numSound = new Audio("./sounds/sound1.mp3");
+const opSound = new Audio("./sounds/sound2.mp3");
+const clearSound = new Audio("./sounds/sound3.mp3");
+const equalSound = new Audio("./sounds/sound4.mp3");
+
+function playSound(sound) {
+    sound.currentTime = 0;
+    sound.play();
+}
+
+//SET VARIABLES
+
 let display = document.getElementById("display");
 
 let currentInput = ""        // what user is typing
@@ -8,6 +21,8 @@ let justCalculated = false;  // whether last action produced a result
 // NUMBER INPUT
 
 function pressNumber(num) {
+
+    playSound(numSound);
 
     if (justCalculated && operator === null) {
         //Start fresh only if no operator is waiting
@@ -23,6 +38,8 @@ function pressNumber(num) {
 // OPERATOR INPUT
 
 function pressOperator(op) {
+
+    playSound(opSound);
 
     if (justCalculated) {
         justCalculated = false;
@@ -62,6 +79,8 @@ function compute() {
 
 function calculate() {
 
+    playSound(equalSound);
+
     // only calculate if we actually have input + operator
     if (currentInput === "" || operator === null) return;
 
@@ -75,6 +94,9 @@ function calculate() {
 // CLEAR 
 
 function clearDisplay() {
+
+    playSound(clearSound);
+
     currentInput = "";
     currentResult = null;
     operator = null;
