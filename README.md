@@ -13,6 +13,7 @@ A simple calculator built with HTML, CSS, and JavaScript.
 - Decimal numbers
 - Clear button
 - Cute pastel UI
+- Cute sounds
 
 ## How to Use
 
